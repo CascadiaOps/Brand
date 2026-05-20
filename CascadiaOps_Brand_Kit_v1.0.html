@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CascadiaOps — Brand Kit v1.0</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy:  #0D1B2A;
+    --teal:  #2ABFBF;
+    --green: #1A8C6E;
+    --warm:  #F4F1EA;
+    --grey:  #8A9BB0;
+    --white: #FFFFFF;
+    --card:  #162130;
+  }
+  body { background: var(--navy); color: var(--white); font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+
+  /* HEADER */
+  header { padding: 28px 20px 24px; border-bottom: 1px solid rgba(42,191,191,0.12); }
+  @media(min-width:700px){ header { padding: 44px 60px 36px; display:flex; align-items:center; justify-content:space-between; } }
+  .wm-name { font-family:'Syne',sans-serif; font-size:22px; font-weight:800; letter-spacing:0.07em; text-transform:uppercase; }
+  .wm-name span { color:var(--teal); }
+  .wm-sub { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.2em; color:var(--grey); text-transform:uppercase; margin-top:4px; border-top:1px solid rgba(42,191,191,0.2); padding-top:4px; }
+  .h-meta { font-family:'DM Mono',monospace; font-size:9px; color:var(--grey); margin-top:12px; line-height:1.8; }
+  @media(min-width:700px){ .h-meta { margin-top:0; text-align:right; } }
+
+  /* LAYOUT */
+  main { padding: 32px 20px; }
+  @media(min-width:700px){ main { padding:52px 60px; max-width:1200px; margin:0 auto; } }
+  section { margin-bottom:56px; }
+  @media(min-width:700px){ section { margin-bottom:72px; } }
+
+  h2 { font-family:'DM Mono',monospace; font-size:9px; font-weight:500; letter-spacing:0.28em; text-transform:uppercase; color:var(--teal); margin-bottom:18px; display:flex; align-items:center; gap:12px; }
+  h2::after { content:''; flex:1; height:1px; background:rgba(42,191,191,0.1); }
+
+  /* GRIDS — mobile-first */
+  .g2 { display:grid; gap:14px; grid-template-columns:1fr; }
+  @media(min-width:560px){ .g2 { grid-template-columns:1fr 1fr; } }
+
+  .g3 { display:grid; gap:14px; grid-template-columns:1fr; }
+  @media(min-width:560px){ .g3 { grid-template-columns:1fr 1fr; } }
+  @media(min-width:860px){ .g3 { grid-template-columns:1fr 1fr 1fr; } }
+
+  .g5 { display:grid; gap:12px; grid-template-columns:1fr 1fr; }
+  @media(min-width:560px){ .g5 { grid-template-columns:repeat(3,1fr); } }
+  @media(min-width:860px){ .g5 { grid-template-columns:repeat(5,1fr); } }
+
+  .card { background:var(--card); border:1px solid rgba(42,191,191,0.1); border-radius:12px; padding:18px; }
+  @media(min-width:700px){ .card { padding:26px; } }
+
+  /* HERO */
+  .hero { background:linear-gradient(135deg,rgba(42,191,191,0.07),rgba(26,140,110,0.04)); border:1px solid rgba(42,191,191,0.16); border-radius:14px; padding:32px 20px; text-align:center; }
+  @media(min-width:700px){ .hero { padding:48px; } }
+  .hero-h { font-family:'Syne',sans-serif; font-size:20px; font-weight:800; margin-bottom:10px; line-height:1.3; }
+  @media(min-width:700px){ .hero-h { font-size:28px; } }
+  .hero-h span { color:var(--teal); }
+  .hero-s { font-family:'DM Mono',monospace; font-size:9px; color:var(--grey); letter-spacing:0.12em; text-transform:uppercase; line-height:1.8; }
+
+  /* LOGO PANELS */
+  .lp { border-radius:12px; overflow:hidden; border:1px solid rgba(42,191,191,0.1); }
+  .lp-lbl { font-family:'DM Mono',monospace; font-size:8px; letter-spacing:0.2em; text-transform:uppercase; padding:7px 14px; background:rgba(0,0,0,0.4); color:var(--grey); }
+  .lp-bg { padding:28px 20px; display:flex; align-items:center; justify-content:center; min-height:130px; }
+  @media(min-width:700px){ .lp-bg { padding:40px 44px; min-height:155px; } }
+  .bg-dark  { background:#0D1B2A; }
+  .bg-warm  { background:#F4F1EA; }
+  .bg-white { background:#ffffff; }
+
+  /* LOCKUP */
+  .lockup { display:flex; align-items:center; gap:12px; }
+  @media(min-width:700px){ .lockup { gap:16px; } }
+  .lockup img { height:42px; width:42px; object-fit:contain; flex-shrink:0; }
+  @media(min-width:700px){ .lockup img { height:54px; width:54px; } }
+  .lk-name { font-family:'Syne',sans-serif; font-weight:800; letter-spacing:0.06em; text-transform:uppercase; line-height:1; font-size:20px; }
+  @media(min-width:700px){ .lk-name { font-size:27px; } }
+  .lk-tag  { font-family:'DM Mono',monospace; letter-spacing:0.13em; text-transform:uppercase; margin-top:5px; font-size:7px; }
+  @media(min-width:700px){ .lk-tag { font-size:8px; } }
+  .dk .lk-name { color:#fff; } .dk .lk-name span { color:var(--teal); } .dk .lk-tag { color:var(--grey); }
+  .wm .lk-name { color:var(--navy); } .wm .lk-name span { color:var(--teal); } .wm .lk-tag { color:#6a7a8a; }
+  .wh .lk-name { color:var(--navy); } .wh .lk-name span { color:var(--teal); } .wh .lk-tag { color:var(--grey); }
+
+  /* SCALE */
+  .sc-row { display:flex; align-items:center; gap:14px; padding:16px 0; border-bottom:1px solid rgba(255,255,255,0.05); flex-wrap:wrap; }
+  .sc-row:last-child { border-bottom:none; }
+  .sc-lbl { font-family:'DM Mono',monospace; font-size:8px; color:var(--grey); letter-spacing:0.15em; text-transform:uppercase; width:60px; flex-shrink:0; }
+  .sc-note { font-family:'DM Mono',monospace; font-size:8px; color:rgba(138,155,176,0.4); }
+
+  /* COLORS */
+  .swatch { border-radius:8px; height:52px; margin-bottom:10px; }
+  @media(min-width:700px){ .swatch { height:64px; } }
+  .sw-n { font-family:'Syne',sans-serif; font-size:12px; font-weight:700; margin-bottom:2px; }
+  .sw-h { font-family:'DM Mono',monospace; font-size:11px; color:var(--teal); }
+  .sw-r { font-family:'DM Mono',monospace; font-size:8px; color:var(--grey); margin-top:4px; text-transform:uppercase; }
+
+  /* TYPE */
+  .tr { padding:13px 0; border-bottom:1px solid rgba(255,255,255,0.04); }
+  .tr:last-child { border-bottom:none; }
+  .tm { font-family:'DM Mono',monospace; font-size:8px; color:var(--grey); letter-spacing:0.15em; text-transform:uppercase; margin-bottom:7px; }
+
+  /* PRODUCTS */
+  .pc { background:var(--card); border:1px solid rgba(42,191,191,0.08); border-radius:12px; padding:18px; position:relative; overflow:hidden; }
+  .pc::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--teal),var(--green)); }
+  .pc-el { font-family:'DM Mono',monospace; font-size:8px; color:var(--grey); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:5px; }
+  .pc-n { font-family:'Syne',sans-serif; font-size:16px; font-weight:800; margin-bottom:2px; }
+  .pc-n span { color:var(--teal); }
+  .pc-t { font-family:'DM Mono',monospace; font-size:8px; color:var(--grey); margin-bottom:9px; }
+  .pc-d { font-size:12px; color:rgba(255,255,255,0.65); line-height:1.6; margin-bottom:10px; }
+  .badge { display:inline-block; font-family:'DM Mono',monospace; font-size:8px; padding:2px 8px; border-radius:20px; letter-spacing:0.08em; text-transform:uppercase; }
+  .bc { background:rgba(42,191,191,0.12); color:var(--teal); }
+  .ba { background:rgba(26,140,110,0.12); color:#2dd4a0; }
+  .bd { background:rgba(138,155,176,0.12); color:var(--grey); }
+  .bp { background:rgba(42,191,191,0.18); color:var(--teal); border:1px solid rgba(42,191,191,0.28); }
+
+  /* COMMERCIAL */
+  .pr { text-align:center; }
+  .pr-a { font-family:'Syne',sans-serif; font-size:26px; font-weight:800; }
+  .pr-u { font-family:'DM Mono',monospace; font-size:9px; color:var(--grey); margin-top:3px; }
+  .pr-d { font-size:12px; color:rgba(255,255,255,0.55); margin-top:9px; line-height:1.6; }
+
+  /* STATS */
+  .stats-grid { display:grid; grid-template-columns:repeat(3,1fr); }
+  .stat { text-align:center; padding:18px 10px; }
+  @media(min-width:700px){ .stat { padding:24px 16px; } }
+  .stat-n { font-family:'Syne',sans-serif; font-size:22px; font-weight:800; color:var(--teal); }
+  @media(min-width:700px){ .stat-n { font-size:28px; } }
+  .stat-l { font-family:'DM Mono',monospace; font-size:8px; color:var(--grey); margin-top:6px; letter-spacing:0.08em; text-transform:uppercase; line-height:1.6; }
+
+  /* USAGE */
+  .do-c  { border-color:rgba(42,191,191,0.2); }
+  .dn-c  { border-color:rgba(255,100,100,0.2); }
+  .ul { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.18em; text-transform:uppercase; margin-bottom:10px; }
+  .do-l { color:var(--teal); } .dn-l { color:#ff6b6b; }
+  .rule { font-size:12px; color:rgba(255,255,255,0.68); padding:7px 0; border-bottom:1px solid rgba(255,255,255,0.04); line-height:1.55; }
+  .rule:last-child { border-bottom:none; }
+
+  /* ASSETS */
+  .ab { background:rgba(0,0,0,0.2); border:1px solid rgba(42,191,191,0.1); border-radius:10px; padding:14px; }
+  .ap { border-radius:8px; display:flex; align-items:center; justify-content:center; padding:20px; margin-bottom:12px; }
+  .al { font-family:'DM Mono',monospace; font-size:9px; color:var(--grey); letter-spacing:0.12em; text-transform:uppercase; }
+  .av { font-family:'DM Mono',monospace; font-size:10px; color:var(--teal); margin-top:2px; }
+
+  /* FOOTER */
+  footer { border-top:1px solid rgba(42,191,191,0.1); padding:18px 20px; }
+  @media(min-width:700px){ footer { padding:22px 60px; display:flex; justify-content:space-between; align-items:center; } }
+  .f-b { font-family:'Syne',sans-serif; font-size:12px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; }
+  .f-b span { color:var(--teal); }
+  .f-m { font-family:'DM Mono',monospace; font-size:9px; color:var(--grey); margin-top:6px; }
+  @media(min-width:700px){ .f-m { margin-top:0; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="wm-name">CASCADIA<span>OPS</span></div>
+    <div class="wm-sub">Brand Kit · v1.0 · May 2026</div>
+  </div>
+  <div class="h-meta">cascadiaops.ai · Confidential · Internal Use Only</div>
+</header>
+
+<main>
+
+  <!-- POSITIONING -->
+  <section>
+    <h2>Positioning</h2>
+    <div class="hero">
+      <div class="hero-h">Distribution Intelligence for the <span>Independent Operator</span></div>
+      <div class="hero-s">AI-Powered Operations · Petroleum · Marine · Chemical Distribution</div>
+    </div>
+  </section>
+
+  <!-- LOCKUPS -->
+  <section>
+    <h2>Logo — Primary Lockups</h2>
+    <div class="g2" style="margin-bottom:14px;">
+      <div class="lp">
+        <div class="lp-lbl">Primary — Dark</div>
+        <div class="lp-bg bg-dark">
+          <div class="lockup dk">
+            <img src="https://raw.githubusercontent.com/CascadiaOps/Brand/main/CascadiaOps_Icon_8K_Transparent_RGBA.png" alt="CascadiaOps">
+            <div><div class="lk-name">CASCADIA<span>OPS</span></div><div class="lk-tag">Distribution Intelligence · AI Operations</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="lp">
+        <div class="lp-lbl">White Background</div>
+        <div class="lp-bg bg-white">
+          <div class="lockup wh">
+            <img src="https://raw.githubusercontent.com/CascadiaOps/Brand/main/CascadiaOps_Icon_8K_Master_RGB.png" alt="CascadiaOps">
+            <div><div class="lk-name">CASCADIA<span>OPS</span></div><div class="lk-tag">Distribution Intelligence · AI Operations</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="g2">
+      <div class="lp">
+        <div class="lp-lbl">Warm Background</div>
+        <div class="lp-bg bg-warm">
+          <div class="lockup wm">
+            <img src="https://raw.githubusercontent.com/CascadiaOps/Brand/main/CascadiaOps_Icon_8K_Master_RGB.png" alt="CascadiaOps">
+            <div><div class="lk-name">CASCADIA<span>OPS</span></div><div class="lk-tag">Distribution Intelligence · AI Operations</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="lp">
+        <div class="lp-lbl">Domain Variant</div>
+        <div class="lp-bg bg-dark">
+          <div class="lockup dk">
+            <img src="https://raw.githubusercontent.com/CascadiaOps/Brand/main/CascadiaOps_Icon_8K_Transparent_RGBA.png" alt="CascadiaOps">
+            <div><div class="lk-name">CASCADIA<span>OPS</span></div><div class="lk-tag" style="color:var(--teal);">cascadiaops.ai</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCALE -->
+  <section>
+    <h2>Scale System</h2>
+    <div class="card">
+      <div class="sc-row">
+        <div class="sc-lbl">Full</div>
+        <div class="lockup dk" style="gap:14px;">
+          <img src="https://raw.githubusercontent.com/CascadiaOps/Brand/main/CascadiaOps_Icon_8K_Transparent_RGBA.png" style="height:52px;width:52px;">
+          <div>
+            <div style="font-family:'Syne',sans-serif;font-size:24px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;color:#fff;line-height:1;">CASCADIA<span style="color:var(--teal);">OPS</span></div>
+            <div style="font-family:'DM Mono',monospace;font-size:8px;color:var(--grey);letter-spacing:0.15em;text-transform:uppercase;margin-top:5px;">Distribution Intelligence · AI Operations</div>
+          </div>
+        </div>
+        <span class="sc-note">hero / decks / landing</span>
+      </div>
+      <div class="sc-row">
+        <div class="sc-lbl">Standard</div>
+        <div class="lockup dk" style="gap:10px;">
+          <img src="https://raw.githubusercontent.com/CascadiaOps/Brand/main/CascadiaOps_Icon_8K_Transparent_RGBA.png" style="height:34px;width:34px;">
+          <div style="font-family:'Syne',sans-serif;font-size:18px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;color:#fff;">CASCADIA<span style="color:var(--teal);">OPS</span></div>
+        </div>
+        <span class="sc-note">nav / headers / email sig</span>
+      </div>
+      <div class="sc-row">
+        <div class="sc-lbl">Icon</div>
+        <div style="display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap;">
+          <div style="text-align:center;"><img src="https://raw.githubusercontent.com/CascadiaOps/Brand/main/CascadiaOps_Icon_8K_Transparent_RGBA.png" style="height:64px;width:64px;object-fit:contain;display:block;"><div style="font-family:'DM Mono',monospace;font-size:7px;color:var(--grey);margin-top:4px;">64px</div></div>
+          <div style="text-align:center;"><img src="https://raw.githubusercontent.com/CascadiaOps/Brand/main/CascadiaOps_Icon_8K_Transparent_RGBA.png" style="height:40px;width:40px;object-fit:contain;display:block;"><div style="font-family:'DM Mono',monospace;font-size:7px;color:var(--grey);margin-top:4px;">40px</div></div>
+          <div style="text-align:center;"><img src="https://raw.githubusercontent.com/CascadiaOps/Brand/main/CascadiaOps_Icon_8K_Transparent_RGBA.png" style="height:24px;width:24px;object-fit:contain;display:block;"><div style="font-family:'DM Mono',monospace;font-size:7px;color:var(--grey);margin-top:4px;">24px</div></div>
+          <div style="text-align:center;"><div style="background:#0D1B2A;padding:3px;border-radius:3px;display:inline-block;"><img src="https://raw.githubusercontent.com/CascadiaOps/Brand/main/CascadiaOps_Icon_8K_Transparent_RGBA.png" style="height:16px;width:16px;object-fit:contain;display:block;"></div><div style="font-family:'DM Mono',monospace;font-size:7px;color:var(--grey);margin-top:4px;">favicon</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLORS -->
+  <section>
+    <h2>Color Palette</h2>
+    <div class="g5">
+      <div class="card"><div class="swatch" style="background:#0D1B2A;border:1px solid rgba(255,255,255,0.08);"></div><div class="sw-n">Deep Navy</div><div class="sw-h">#0D1B2A</div><div class="sw-r">Primary BG</div></div>
+      <div class="card"><div class="swatch" style="background:#2ABFBF;"></div><div class="sw-n">Cascade Teal</div><div class="sw-h">#2ABFBF</div><div class="sw-r">OPS · Accent</div></div>
+      <div class="card"><div class="swatch" style="background:#1A8C6E;"></div><div class="sw-n">Forest Green</div><div class="sw-h">#1A8C6E</div><div class="sw-r">Secondary</div></div>
+      <div class="card"><div class="swatch" style="background:#F4F1EA;border:1px solid rgba(0,0,0,0.07);"></div><div class="sw-n" style="color:#0D1B2A;">Warm Light</div><div class="sw-h">#F4F1EA</div><div class="sw-r">Light BG</div></div>
+      <div class="card"><div class="swatch" style="background:#8A9BB0;"></div><div class="sw-n">Steel Grey</div><div class="sw-h">#8A9BB0</div><div class="sw-r">Meta · Labels</div></div>
+    </div>
+  </section>
+
+  <!-- TYPOGRAPHY -->
+  <section>
+    <h2>Typography</h2>
+    <div class="g2">
+      <div class="card">
+        <div class="tm">Display / Wordmark — Syne 800</div>
+        <div class="tr"><div style="font-family:'Syne',sans-serif;font-size:28px;font-weight:800;letter-spacing:0.04em;text-transform:uppercase;">CASCADIA<span style="color:var(--teal);">OPS</span></div></div>
+        <div class="tr"><div style="font-family:'Syne',sans-serif;font-size:17px;font-weight:700;">Distribution Intelligence</div></div>
+        <div class="tr"><div style="font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:var(--teal);">Product Names · Headers</div></div>
+      </div>
+      <div class="card">
+        <div class="tm">System — DM Mono · Body — Inter</div>
+        <div class="tr"><div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--grey);">AI OPERATIONS · cascadiaops.ai</div></div>
+        <div class="tr"><div style="font-family:'DM Mono',monospace;font-size:12px;color:var(--teal);">v1.0 · May 2026</div></div>
+        <div class="tr"><div style="font-size:13px;line-height:1.75;color:rgba(255,255,255,0.7);">Built by an operator who actually ran the business. That's the only story the market will trust.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section>
+    <h2>Product Suite — The Mountain Stack</h2>
+    <div class="g3" style="margin-bottom:14px;">
+      <div class="pc"><div class="pc-el">14,411 ft · Washington · Flagship</div><div class="pc-n">Rainier <span>CRM</span></div><div class="pc-t">Full-cycle CRM for fuel & lube distributors</div><div class="pc-d">Accounts, contacts, deals, bids, and activity tracking. Built by an operator who needed it.</div><span class="badge bc">Core Platform</span></div>
+      <div class="pc"><div class="pc-el">11,239 ft · Oregon · Sharp & Precise</div><div class="pc-n">Hood <span>Pricing</span></div><div class="pc-t">Rack pricing engine · DTN / OPIS integrated</div><div class="pc-d">Real-time rack with DTN TABS, freight matrix, OPIS verification, and per-lane margin calc.</div><span class="badge bc">Core Platform</span></div>
+      <div class="pc"><div class="pc-el">10,781 ft · Washington · Steady</div><div class="pc-n">Baker <span>Bid Desk</span></div><div class="pc-t">AI-powered bid management agent</div><div class="pc-d">Automated bid deadlines, freight validation, margin analysis, and AI recommendation engine.</div><span class="badge ba">AI Agent</span></div>
+    </div>
+    <div class="g3">
+      <div class="pc"><div class="pc-el">Crater Lake · Oregon · Deep Clarity</div><div class="pc-n">Crater <span>Analytics</span></div><div class="pc-t">Ops intelligence · Full margin visibility</div><div class="pc-d">GM tracking, rep performance, margin by product and lane, AR aging, delivery ops.</div><span class="badge bd">Analytics Layer</span></div>
+      <div class="pc"><div class="pc-el">14,179 ft · California · New Ground</div><div class="pc-n">Shasta <span>Prospecting</span></div><div class="pc-t">AI prospect intelligence · 5 leads/rep/day</div><div class="pc-d">Researches, scores, and delivers qualified leads daily. Loads directly into Rainier CRM.</div><span class="badge ba">AI Agent</span></div>
+      <div class="pc" style="border-color:rgba(42,191,191,0.2);background:rgba(42,191,191,0.03);"><div class="pc-el">The Platform Umbrella</div><div class="pc-n" style="color:var(--teal);">Cascadia<span style="color:#fff;">Ops</span></div><div class="pc-t">The OS for independent distribution</div><div class="pc-d">All five products unified. One login. One source of truth. Built to scale or sell at a premium.</div><span class="badge bp">Full Suite</span></div>
+    </div>
+  </section>
+
+  <!-- COMMERCIAL -->
+  <section>
+    <h2>Commercial Model</h2>
+    <div class="g3">
+      <div class="card pr"><div class="pr-a">$175<span style="font-size:14px;color:var(--grey);">/hr</span></div><div class="pr-u">Consulting · Floor $150/hr</div><div class="pr-d">Fractional ops, AI implementation, freight matrix builds, exit readiness.</div></div>
+      <div class="card pr"><div class="pr-a">$7,500<span style="font-size:14px;color:var(--grey);">/mo</span></div><div class="pr-u">Managed Retainer · Target</div><div class="pr-d">CascadiaOps runs bid desk, CRM, and prospect pipeline. 3 clients = breakeven Month 3.</div></div>
+      <div class="card pr"><div class="pr-a">$165<span style="font-size:14px;color:var(--grey);">/seat/mo</span></div><div class="pr-u">SaaS · $3,500 setup</div><div class="pr-d">Rainier CRM + Baker Bid Desk included. Crater + Shasta as add-ons.</div></div>
+    </div>
+  </section>
+
+  <!-- MARKET -->
+  <section>
+    <h2>Market Position</h2>
+    <div class="card" style="padding:0;">
+      <div class="stats-grid">
+        <div class="stat"><div class="stat-n">4,000+</div><div class="stat-l">Independent US<br>Distributors</div></div>
+        <div class="stat" style="border-left:1px solid rgba(255,255,255,0.05);border-right:1px solid rgba(255,255,255,0.05);"><div class="stat-n">$20–100M</div><div class="stat-l">Target Revenue<br>Band / Client</div></div>
+        <div class="stat"><div class="stat-n">$0</div><div class="stat-l">Direct Competitors<br>at This Price</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- USAGE -->
+  <section>
+    <h2>Brand Usage</h2>
+    <div class="g2">
+      <div class="card do-c"><div class="ul do-l">✓ Do</div><div class="rule">CASCADIAOPS one word, all caps in display</div><div class="rule">Always render "OPS" in Cascade Teal #2ABFBF</div><div class="rule">Use mountain icon at all scales down to 16px favicon</div><div class="rule">Lead with: Distribution Intelligence · AI Operations</div><div class="rule">Navy + teal for all primary placements</div><div class="rule">DM Mono for all metadata, labels, technical copy</div><div class="rule">Position as platform / OS — not consulting</div></div>
+      <div class="card dn-c"><div class="ul dn-l">✗ Don't</div><div class="rule">Don't split Cascadia and Ops across two lines</div><div class="rule">Don't recolor the mountain mark outside teal palette</div><div class="rule">Don't use any font other than Syne for wordmark</div><div class="rule">Don't place on busy photographic backgrounds</div><div class="rule">Don't call it a consulting firm — it's an OS</div><div class="rule">Don't pitch strangers until one non-friend pays $165/mo</div><div class="rule">Don't update LinkedIn until week of PTE departure</div></div>
+    </div>
+  </section>
+
+  <!-- MASTER ASSETS -->
+  <section>
+    <h2>Master Assets</h2>
+    <div class="g2">
+      <div class="ab">
+        <div class="ap" style="background:#0D1B2A;"><img src="https://raw.githubusercontent.com/CascadiaOps/Brand/main/CascadiaOps_Icon_8K_Master_RGB.png" style="height:90px;width:90px;object-fit:contain;"></div>
+        <div class="al">Icon — 8K Master (RGB)</div>
+        <div class="av">8192 × 8192px · PNG · 10.3MB</div>
+        <div style="font-family:'DM Mono',monospace;font-size:8px;color:var(--grey);margin-top:2px;">Print · Merchandise · Large Format</div>
+      </div>
+      <div class="ab">
+        <div class="ap" style="background:repeating-conic-gradient(#1a2e42 0% 25%,#0D1B2A 0% 50%) 0 0/16px 16px;"><img src="https://raw.githubusercontent.com/CascadiaOps/Brand/main/CascadiaOps_Icon_8K_Transparent_RGBA.png" style="height:90px;width:90px;object-fit:contain;"></div>
+        <div class="al">Icon — 8K Transparent (RGBA)</div>
+        <div class="av">8192 × 8192px · PNG · 11.5MB</div>
+        <div style="font-family:'DM Mono',monospace;font-size:8px;color:var(--grey);margin-top:2px;">Digital · Web · App · Overlays</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="f-b">CASCADIA<span>OPS</span></div>
+  <div class="f-m">Brand Kit v1.0 · May 2026 · Confidential · cascadiaops.ai</div>
+</footer>
+
+</body>
+</html>
